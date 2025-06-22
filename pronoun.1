@@ -1,0 +1,28 @@
+.TH PRONOUND 8 "pronound" "User Commands"
+.SH NAME
+pronoun \- pronoun query client
+.SH SYNOPSIS
+.B pronoun
+user@host [port]
+.SH DESCRIPTION
+pronound is a daemon that querys pronouns of users on a remote server, much like
+.B finger(1).
+.PP
+.SH EXIT STATUS
+.TP
+0
+The command was successfully executed.
+.TP
+1
+An error occurred (invalid config, fatal error, etc).
+Default configuration file.
+.SH SEE ALSO
+.BR fingerd (8),
+.BR finger (1),
+.BR pronound (8)
+.BR pronound.conf (5),
+.SH AUTHORS
+Written by werdl <werdl_@outlook.com>
+.SH LICENSE
+pronoun is free software released under GPLv3.
+

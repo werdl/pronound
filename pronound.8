@@ -1,11 +1,11 @@
 .TH PRONOUND 8 "pronound" "User Commands"
 .SH NAME
-freedoas \- pronoun query daemon
+pronound \- pronoun query daemon
 .SH SYNOPSIS
 .B pronound
 [\fB\-C\fR \fIconfig\fR] [\fB\-d\fR]
 .SH DESCRIPTION
-pronound is a daemon that querys pronouns of users on a remote server, much like 
+pronound is a daemon that manages queries of pronouns of users on a server, much like 
 .B fingerd(8).
 .PP
 pronound reads from the configuration file 
@@ -33,9 +33,10 @@ An error occurred (invalid config, fatal error, etc).
 .I /etc/pronound.conf
 Default configuration file.
 .SH SEE ALSO
+.BR pronound.conf (5),
+.BR pronoun (1)
 .BR fingerd (8),
 .BR finger (1),
-.BR pronound.conf (5),
 .SH AUTHORS
 Written by werdl <werdl_@outlook.com>
 .SH LICENSE
