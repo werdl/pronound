@@ -1,0 +1,60 @@
+.TH PRONOUND.CONF 5 "June 2025" "pronound" "File Formats"
+.SH NAME
+pronound.conf \- configuration file for pronound(8)
+.SH DESCRIPTION
+The
+.I pronound.conf
+file defines the rules followed by
+.B pronound(1).
+.PP
+The default path is
+.I /etc/pronound.conf,
+but an alternate path may be specified via the
+.B \-C
+option.
+.SH SYNTAX
+Each line contains a rule.
+.PP
+Rules are processed from top to bottom, with the last matching rule taking precedence.
+.PP
+Comments start with
+.B #
+and extend to the end of the line.
+.SH RULES
+.TP
+.B daemonise <true|false>
+If set to true, the daemon will run in the background and log to syslog. If false, it will run in the foreground and log to stderr.
+.TP
+.B user <username>
+Run pronound under the specified username, after root privileges (needed to bind to low ports) are dropped.
+.TP
+.B port <port>
+Set the port on which pronound listens for incoming connections. The default is 731.
+.TP
+.B defaults <value>
+What will be returned if the user has no pronouns set. This can be a string like "no pronouns set" or "unknown".
+.TP
+.B file <path>
+The file, relative to the $HOME directory of the user, where pronouns are stored. The default is ".pronouns".
+.SH EXAMPLES
+Configuration file for a system without a service manager:
+.PP
+.EX
+daemonise true
+defaults none specified
+file .pronouns
+port 731
+user _pronound
+.EE
+.SH FILES
+.TP
+.I /etc/pronound.conf
+Default configuration file.
+.SH SEE ALSO
+.BR pronound(8),
+.BR fingerd(8),
+.BR finger(1)
+.SH AUTHORS
+Written by werdl <werdl_@outlook.com>
+.SH LICENSE
+pronound is free software released under GPLv3.
